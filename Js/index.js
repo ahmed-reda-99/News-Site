@@ -1,6 +1,3 @@
-
-
-
 var links = document.getElementsByClassName("nav-link");
 var searchInp = document.getElementById("searchInp");
 var news ;
@@ -70,7 +67,7 @@ function displayNews()
         var title =news[i].title
         var titleSub = title.substring(0,30)
         var desc = news[i].description
-        temp +=` <div class="col-md-3">
+        temp +=` <div class="col-lg-3 md-3 sm-12">
         <div class="new bg-warning text-center  justify-content-center">
         <a href=`+news[i].url+`>
         <div class="imgNews">
