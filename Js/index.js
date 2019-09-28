@@ -1,18 +1,12 @@
 var links = document.getElementsByClassName("nav-link");
 var searchInp = document.getElementById("searchInp");
 var news ;
-var term;
 var category = 'general';
 var country = 'eg';
 
 getNews();
 
-searchInp.addEventListener("keyup" , function(){
 
-    term  = searchInp.value;
-
-    globalSearch();
-})
 
 for(var i=0 ; i <links.length ; i++)
     {
@@ -64,7 +58,7 @@ function displayNews()
     for(var i=0 ; i < news.length ; i++)
     {
         var title =news[i].title
-        var titleSub = title.substring(0,30)
+        var titleSub = title.substring(0,40)
         var desc = news[i].description
         temp +=` <div class="col-lg-3 md-6 sm-12">
         <div class="new bg-warning text-center  justify-content-center">
@@ -80,39 +74,7 @@ function displayNews()
     document.getElementById("newsRow").innerHTML = temp;   
 }
 
-function globalSearch()
-{
-  
- 
-    var req ; // IE5 , IE6 
 
-    if(window.XMLHttpRequest) // modern browsers 
-        {
-                req = new XMLHttpRequest();
-        }
-    else // IE5 ,IE6
-        {
-               req = new ActiveXObject("Microsoft.XMLHTTP") 
-        }    
-
-    var url =`https://newsapi.org/v2/everything?q=`+term+`&from=2019-08-28&sortBy=publishedAt&apiKey=d60d4a9603414b1088ac0fc47f91e7da`
-    req.open("GET",url )
-
-    req.onreadystatechange =function()
-    {
-        if(req.status == 200 &&  req.readyState == 4)
-            {
-
-            news =  JSON.parse (req.response );
-            news = news.articles;
-            displayNews();
-            }
-    }
-
-    req.send();
-
-
-}
 
 
 
