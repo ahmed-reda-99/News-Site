@@ -1,0 +1,15 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+ 
+.new{
+position: relative;
+height: 40vh;
+ overflow: hidden;
+}
+.imgNews{
+height: 50%;
+ overflow: hidden;
+}
