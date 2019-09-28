@@ -6,10 +6,10 @@ body {
  
 .new{
 position: relative;
-height: 40vh;
+height: 20vh;
  overflow: hidden;
 }
 .imgNews{
-height: 50%;
+height: 70%;
  overflow: hidden;
 }
