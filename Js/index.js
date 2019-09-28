@@ -7,8 +7,7 @@ var country = 'eg';
 
 getNews();
 
-
-searchInp.addEventListener("keydown" , function(){
+searchInp.addEventListener("keyup" , function(){
 
     term  = searchInp.value;
 
@@ -84,7 +83,7 @@ function displayNews()
 function globalSearch()
 {
   
-  
+ 
     var req ; // IE5 , IE6 
 
     if(window.XMLHttpRequest) // modern browsers 
@@ -96,9 +95,7 @@ function globalSearch()
                req = new ActiveXObject("Microsoft.XMLHTTP") 
         }    
 
-    var url =`https://newsapi.org/v2/everything?q=`+term+`&from=2019-08-26&sortBy=publishedAt&apiKey=d60d4a9603414b1088ac0fc47f91e7da
-
-    `
+    var url =`https://newsapi.org/v2/everything?q=`+term+`&from=2019-08-28&sortBy=publishedAt&apiKey=d60d4a9603414b1088ac0fc47f91e7da`
     req.open("GET",url )
 
     req.onreadystatechange =function()
