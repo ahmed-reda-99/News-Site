@@ -59,16 +59,20 @@
           function displayNews() {
               var temp = "";
               for (var i = 0; i < news.length; i++) {
-                  var title = news[i].title
-                  var titleSub = title.substring(0, 40)
-                  var desc = news[i].description
-                  temp += ` <div class="col-lg-3 md-6 sm-12">
-        <div class="new bg-warning text-center  justify-content-center">
+                  var title = news[i].title;
+                  var titleSub = title.substring(0, 40);
+                  var desc = news[i].description;
+                  if(desc!==null){
+                  var descSub= desc.substring(0,60)
+                  }
+                 
+        temp += ` <div class="col-lg-3 md-6 sm-12">
+    <div class="new bg-warning text-center  justify-content-center">
         <a href=` + news[i].url + `>
         <div class="imgNews">
-        <img src="` + news[i].urlToImage + `" alt="NewsImg" class="img-fluid"/></div>
-                <h5 class="">` + titleSub + `...</h5></a>
-                <p class="text-muted">` + desc + `...</p>
+<img src="` + news[i].urlToImage + `" alt="NewsImg" class="img-fluid"/></div>
+         <div class="p-2"><h5 class="">` + titleSub + `...</h5></a>
+                <p class="text-muted">` +descSub+ `...</p></div>
         </div>
         <br/>
     </div>`
